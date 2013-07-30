@@ -1,0 +1,31 @@
+body{position:relative;}
+#wrapper{width:100%;float:left;background:#fff;}
+#wrapMedia{width:800px;height:400px;margin:0 auto;position:relative;}
+
+/* Tile styles */
+.projectTile{border:#666;float:left;z-index:5;overflow:hidden;
+	background-position:center center}
+.projectTile.active{z-index:10;position:absolute;}
+
+/* Caption styles */
+.tileCaption{position:absolute;height:50%;width:100%;background:rgba(41,101,160,0.75);display:block;color:#fff;}
+	.active .tileCaption{display:none;}
+	.tileCaption .gutter{padding:20px;}
+	.tileCaption h3{font-family:Helvetica,Arial,sans-serif;font-size:24px;font-weight:700;text-transform: uppercase;}
+
+/* Content styles -- Each tile is given it's own ID can can be styled individucally based on that ID */
+.tileContent{display:none;}
+	.active .tileContent{background: none repeat scroll 0 0 rgba(255, 255, 255, 0.75);border: 3px solid #AAAAAA;border-radius: 30px 30px 30px 30px;bottom: 5%;display: block;left: 3%;position: absolute;width: 75%;}
+	.tileContent .gutter{padding:20px;}
+	#tile_1 .tileContent{background:rgba(191,21,21,0.75);color:#fff;width:50%;height:90%;}
+	#tile_5 .tileContent{background:rgba(21,191,32,0.75);color:#fff;width:75%;height:75%;top:10%;left:10%;border-radius: 0;}
+		#tile_5 .tileContent .gutter{padding:0;}
+
+/* Close button styling */
+.closeButton{display:none;}
+	.active .closeButton{background:#ccc;position:absolute;right:10px;top:10px;display:block;text-indent:-9999px;height:20px;width:20px;z-index:20;}
+	.active .closeButton:hover{cursor:pointer;}
+	
+/* Hide the management table unless we're in edit view */
+#tileTable{display:none;}
+	#tinymce #tileTable{display:block;}
